@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
+import {CheckboxListComponent} from '../shared/checkboxList';
 
 interface User1 {
     name: string; // text
@@ -10,6 +11,7 @@ interface User1 {
     topics?: string[]; // multiple select 
     isActive?: boolean; // checkbox
     toggle?: string; // checkbox toggle either 'toggled' or 'untoggled'
+    browsers?:string[];
 }
 
 // theme.interface.ts
@@ -24,11 +26,18 @@ interface Theme1 {
     {
         moduleId:module.id,
         selector:'fc1',
-        templateUrl:'FormControlsUsage1.template.html' 
+        templateUrl:'FormControlsUsage1.template.html' ,
+        directives:[CheckboxListComponent]
     }
 )
 export class FormControlsUsageComponent1 {
-   
+    public browsers = [
+        { value: 'Firefox', display: 'Firefox' },
+        { value: 'Chrome', display: 'Chrome' },
+        { value: 'IE', display: 'Internet Explorer' },
+        { value: 'Edge', display: 'Edge' }
+    ];
+
     public genders = [
         { value: 'F', display: 'Female' },
         { value: 'M', display: 'Male' }
@@ -75,7 +84,8 @@ export class FormControlsUsageComponent1 {
                                     theme:'',
                                     isActive:'',
                                     toggle:'',
-                                    topics:[]
+                                    topics:[],
+                                    browsers:[]
                                 });                                
     }
     
@@ -111,6 +121,6 @@ export class FormControlsUsageComponent1 {
         q.push(t);
         ctrl.setValue(q);
      }
-   };
+   }
 }
 

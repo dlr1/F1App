@@ -6,13 +6,14 @@ import {ReactiveFormsModule } from '@angular/forms';
 import {MyFilterPipe} from './myFilterPipe';
 import {ErgastAPIservice} from './ergastAPIservice';
 import {DataService} from './dataService';
+import {CheckboxListComponent} from './checkboxList';
 
 import {CanDeactivateGuard} from './can-deactivate-guard.service';
 
 @NgModule({
-  imports: [HttpModule, JsonpModule, FormsModule, ReactiveFormsModule],
-  declarations:[MyFilterPipe],
-  exports: [CommonModule, FormsModule, MyFilterPipe, FormsModule, ReactiveFormsModule]  
+  imports: [HttpModule, JsonpModule, FormsModule, ReactiveFormsModule, CommonModule],
+  declarations:[MyFilterPipe, CheckboxListComponent],
+  exports: [CommonModule, FormsModule, MyFilterPipe, FormsModule, ReactiveFormsModule, CheckboxListComponent]  
 })
 export class SharedModule {
     static forRoot(): ModuleWithProviders {

@@ -3,7 +3,11 @@
 </div>
 <div>
     <form [formGroup]="userForm" novalidate>
-
+    
+    <div>
+        <checkbox-list [items]="browsers" [label]="'Browser'" [valueField]="'value'" [displayField]="'display'"
+            formControlName="browsers"></checkbox-list>
+    </div>
     <div>
         <label>Name</label>
         <input type="text" formControlName="name">
@@ -70,6 +74,7 @@
                 [checked]="isChecked(topic.value)" (click)="toggleSelection(topic.value)" >{{topic.display}} 
         </label>
     </div>
+    
     <button type="submit" (click)="save(f.value, f.valid)">Submit</button>
 </form>
 </div>
