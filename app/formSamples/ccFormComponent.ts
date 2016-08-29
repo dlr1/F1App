@@ -26,7 +26,6 @@ class Command{
   variables:Array<Variable>;
 }
 
-
 @Component({  
   moduleId: module.id,
   templateUrl: 'ccForm.template.html'    
