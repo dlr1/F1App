@@ -1,0 +1,75 @@
+<div>
+    {{f.value | json}}
+</div>
+<div>
+    <form #f="ngForm" novalidate>
+
+    <div>
+        <label>Name</label>
+        <input type="text" name="name" [(ngModel)]="user.name">
+    </div>
+    <div>
+        <label>Age</label>
+        <input type="number" name="age" [(ngModel)]="user.age">
+    </div>
+    <div>
+        <label>Gender</label>
+        <div *ngFor="let gender of genders">
+            <label>
+                <input type="radio" name="gender" [(ngModel)]="user.gender" 
+                    [value]="gender.value">
+                    {{gender.display}}
+            </label>
+        </div>
+    </div>
+    <div>
+        <label>Role - getting only the value of the selected Item (bind to 'value')</label>
+        <select name="role" [(ngModel)]="user.role">
+            <option *ngFor="let role of roles" [value]="role.value">  
+            {{role.display}}
+            </option>
+        </select>
+    </div>
+    <div>
+        <label>Theme - getting the whole selected object (bind to 'ngValue')</label>
+        <select name="theme" [(ngModel)]="user.theme">
+            <option *ngFor="let theme of themes" [ngValue]="theme">  
+                {{theme.display}}
+            </option>
+        </select>
+    </div>
+    <div>
+        <label>Topics</label>
+        <select multiple name="topics" [(ngModel)]="user.topics">
+            <option *ngFor="let topic of topics" [value]="topic.value">  
+                {{topic.display}}
+            </option>
+        </select>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" name="isActive"  [(ngModel)]="user.isActive">
+            Is Active
+        </label>
+    </div>
+    <div>
+        <input type="hidden" name="toggle" [(ngModel)]="user.toggle">
+        <div>
+            <label>
+                <input type="checkbox"
+                    [checked]="user.toggle === toggles[0].value" 
+                    (change)="$event.target.checked? (user.toggle =  toggles[0].value) : (user.toggle = toggles[1].value)">
+                {{ toggles[0].display }}
+            </label>
+        </div>
+    </div>
+    <div>
+        <span style="padding-right:20px">multiple checkboxes</span>
+        <label *ngFor="let topic of topics" style="padding-right:10px">
+            <input type="checkbox" name="topic[]" value="{{topic.value}}" 
+                [checked]="isChecked(topic.value)" (click)="toggleSelection(topic.value)" >{{topic.display}} 
+        </label>
+    </div>
+    <button type="submit" (click)="save(f.value, f.valid)">Submit</button>
+</form>
+</div>

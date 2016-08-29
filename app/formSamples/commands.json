@@ -1,0 +1,53 @@
+{
+    "commands": [
+        {
+            "id": 1009,
+            "name": "DIA - Show Route Table Detail on IP",
+            "platform": "CTR",
+            "category": "Show",
+            "access": [
+                "Command Center Level 2"
+            ],
+            "intrusiveness": "",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show route <<NetworkIP>> table inet.0 <<Detail>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "NetworkIP",
+                    "label": "Route",
+                    "regex_name": "ip_v4",
+                    "required": true,
+                    "placeholder": "Network IP",
+                    "values": [
+                        {
+                            "value": ""
+                        }
+                    ]
+                },
+                {
+                    "type": "form-checkbox",
+                    "variable": "Detail",
+                    "label": "Options",
+                    "values": [
+                        {
+                            "value": "terse"
+                        }
+                    ],
+                    "options": [
+                        {
+                            "label": "Terse",
+                            "value": "terse"
+                        }
+                    ],                    
+                    "checked": "detail",
+                    "unchecked": "terse"
+                }
+            ]
+        }
+    ]
+}

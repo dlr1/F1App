@@ -1,0 +1,59 @@
+<div class="container-fluid main-content">
+  <div class="row-fluid">
+    <div class="span12">
+      <h2 class="main-titling">Race Calendar</h2>
+      <div class="row-fluid">
+        <div class="span12">
+          <table class="table table-striped table-bordered box list-table">
+            <thead>
+              <tr>
+                <th colspan="5" class="tab-header tb-header-drivers">Race Calendar - 2013</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr class="heading-row">
+                <td class="responsive_column"><strong>Round</strong></td>
+                <td>Grand Prix</td>
+                <td class="responsive_column">Circuit</td>
+                <td>Date</td>
+                <td>Winner</td>
+              </tr>
+              
+              <tr *ngFor="let race of raceList; let i=index">
+                <td class="responsive_column"><strong>{{i + 1}}</strong></td>
+
+                <td><img src="images/flags/{{race.Circuit.Location.country}}.png" />
+                	<strong>
+                        	<a [routerLink]="['/race',race.round]">
+        							{{race.raceName}}        							                
+                      <span >{{race?.Circuit.Location.country}}</span>
+        						</a>
+                    
+        					</strong>
+        				</td>
+
+                <td class="responsive_column">
+                  <strong>
+                      <a [routerLink]="['/race',race.round]">
+        							{{race.Circuit.circuitName}}        							                                      
+        						</a>                   
+                  </strong>
+                </td>
+                <td><strong>{{race.date}}</strong></td>
+                <td>
+                    <a [routerLink]="['/driver',race.Results[0].Driver.driverId]">
+        							<img src="images/flags/{{race.Results[0].Driver.nationality}}.png" /> 
+                        <strong>{{race.Results[0].Driver.familyName}}</strong>                 
+                  </a>
+                  
+                </td>
+                </tr>             
+            </tbody>           
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

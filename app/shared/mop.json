@@ -1,0 +1,91 @@
+{
+    "Id": 508,
+    "StatusId": 1,
+    "Status": "Certified",
+    "MopTypeId": 4,
+    "MopType": "Partner",
+    "IntendedForCertification": "No",
+    "Title": "CMAT LH Fiber SA",
+    "Description": "use this mop for level 3 and other carrier fiber activity that affects the backbone.",
+    "KeyWords": null,
+    "EquipmentId": 200676,
+    "Equipment": null,
+    "CategoryId": 289,
+    "Category": "External Mtc - Carrier/Partner",
+    "ServiceImpacting": "Yes",
+    "UseAltCircuitImpact": null,
+    "ImpactId": 99,
+    "Impact": "Assigned at Task Creation",
+    "CertifyWorkgroup": "MR CMAT",
+    "CertifiedBy": "vakircher",
+    "CertifiedDate": "2015-01-21T15:53:36.7307970",
+    "MaintWindowStartTime": "23:00",
+    "MaintWindowEndTime": "06:00",
+    "MaintWindowDaysOfWeek": "SUN,MON,TUE,WED,THU,FRI,SAT",
+    "DaysOfWeek": [
+        "SUN",
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI",
+        "SAT"
+    ],
+    "AutomaticApproval": "No",
+    "FileName": null,
+    "FileVersion": 0,
+    "FileLastModified": null,
+    "CreatedBy": null,
+    "CreatedDate": "2015-01-21T15:05:12.9758160",
+    "LastModifiedBy": "vakircher",
+    "LastModifiedDate": "2016-03-29T10:09:35.8145380",
+    "Approvers": [
+        {
+            "Id": 85,
+            "MopId": 508,
+            "WorkGroupId": "WGP000000001195",
+            "WorkGroupName": "Transmission Support LITES",
+            "IsNew": false,
+            "IsDeleted": false
+        },
+        {
+            "Id": 83,
+            "MopId": 508,
+            "WorkGroupId": "WGP000000101514",
+            "WorkGroupName": "Conflict Data",
+            "IsNew": false,
+            "IsDeleted": false
+        },
+        {
+            "Id": 81,
+            "MopId": 508,
+            "WorkGroupId": "WGP000000101515",
+            "WorkGroupName": "Conflict VoIP",
+            "IsNew": false,
+            "IsDeleted": false
+        }
+    ],
+    "Resources": [
+        {
+            "Id": 62,
+            "MopId": 508,
+            "WorkGroupId": "WGP000000001134",
+            "WorkGroupName": "Data Support Router Support",
+            "IsNew": false,
+            "IsDeleted": false
+        }
+    ],
+    "MetaData": {
+        "MopId": 508,
+        "IsEditable": false,
+        "CanCertify": false,
+        "CanRemove": false
+    },
+    "TechnicalSteps": "1. STL NCC will call the CARRIER to verify start of MR. \n2. STL NCC will open MR with confirmation. \n3. STL NCC will monitor network while CARRIER performs maintenance. \n4. STL NCC will call the CARRIER to verify the maintenance is completed.\n5. STL NCC will verify no residual alarms after the CARRIER's \nmaintenance. \n6. STL NCC will close MR with confirmation.\n\nBack out plan - Defined by CARRIER.",
+    "EventCount": 34,
+    "MaintId": 0,
+    "TaskDescription": null,
+    "IsAdhoc": false,
+    "Dispatch": false,
+    "Worksheet": false
+}

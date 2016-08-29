@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-md-2">
+        <ul>
+            <li><a [routerLink]="['template']" routerLinkActive="true">Template Form</a></li>
+            <li><a [routerLink]="['reactive']" routerLinkActive="true">Reactive Form</a></li>
+            <li><a [routerLink]="['ccForm']" routerLinkActive="true">CC Form</a></li>
+            <li><a [routerLink]="['fc']" routerLinkActive="true">Form controls usage (template forms)</a></li>
+            <li><a [routerLink]="['fc1']" routerLinkActive="true">Form controls usage (reactive forms)</a></li>
+        </ul>
+    </div>
+    <div class="col-md-8"><router-outlet></router-outlet></div>
+</div>

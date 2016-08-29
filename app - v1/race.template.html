@@ -1,0 +1,114 @@
+		<div class="row well" style='margin:5px'>
+			<div>
+				<div class="pull-left" >
+					<img  src="images/flags/{{race?.Circuit.Location.country}}.png" />
+					{{race?.raceName}}
+				</div>			
+
+				<div class="pull-left" style='padding-left:20px'>
+					<strong>Country:</strong>
+					{{race?.Circuit.Location.country}}	
+				</div>
+				<div class="pull-left" style='padding-left:20px'>
+					<strong>Location:</strong>
+					{{race?.Circuit.Location.locality}}
+				</div>
+				<div class="pull-left" style='padding-left:20px'>
+					<strong>Date:</strong>
+					{{race?.date}}									
+				</div>
+			</div>			
+		</div>
+
+	<div class="row">		
+			<div class="col-md-6">
+	          <table class="table table-striped table-condensed table-bordered box list-table result-table">
+	            <thead>
+	              <tr>
+	                <th colspan="4" class="tab-header tb-header-drivers">Qualifying Results</th>
+	              </tr>
+	            </thead>
+
+	            <tbody>
+	              <tr class="heading-row">
+	                <td><strong>Pos</strong></td>
+	                <td>Driver</td>
+	        		<td>Team</td>
+	                <td>Best Time</td>
+	              </tr>
+
+	              <tr *ngFor="let driver of qualiResult">
+	                <td><strong>{{driver.position}}</strong></td>
+	                <td>
+	                	<a [routerLink]="['/driver',driver.Driver.driverId]">
+	                		<img src="images/flags/{{driver.Driver.nationality}}.png" />
+        					{{driver.Driver.familyName}}
+        				</a>
+	                </td>
+
+	        		<td><a [routerLink]="['/team',driver.Constructor.constructorId]">{{driver.Constructor.name}}</a></td>
+
+	                <td>
+	                	<span *ngIf="driver.Q3">
+	                		{{driver.Q3}}
+	                	</span>
+	                	<span *ngIf="!driver.Q3 && driver.Q2">
+	                		{{driver.Q2}}
+	                	</span>
+	                	<span *ngIf="!driver.Q2">
+	                		{{driver.Q1}}
+	                	</span>
+	                </td>
+	              </tr>	            
+	            </tbody>	          
+	          </table>
+        	</div>
+
+        	<div class="col-md-6">
+	          <table class="table table-striped table-condensed table-bordered box list-table result-table">
+	            <thead>
+	              <tr>
+	                <th colspan="5" class="tab-header tb-header-drivers">Race Results</th>
+	              </tr>
+	            </thead>
+
+	            <tbody>
+	              <tr class="heading-row">
+	                <td><strong>Pos</strong></td>
+	                <td>Driver</td>
+	        		<td>Team</td>
+	                <td>Result</td>
+	                <td>Points</td>
+	              </tr>
+
+	              <tr *ngFor="let driver of raceResult">
+	                <td><strong>{{driver.position}}</strong></td>
+	                <td>
+	                	<a [routerLink]="['/driver',driver.Driver.driverId]">
+	                		<img src="images/flags/{{driver.Driver.nationality}}.png" />
+        					{{driver.Driver.familyName}}
+        				</a>
+	                </td>
+
+	        		<td><a [routerLink]="['/team',driver.Constructor.constructorId]">{{driver?.Constructor.name}}</a></td>
+
+	                <td>
+	                	<span ng-show="(driver.status=='Finished')">
+	                		{{driver?.Time?.time}}
+	                	</span>	    
+										<span *ngIf="!(driver.status=='Finished')" >
+											{{driver.status}}	                		
+	                	</span>            
+	                </td>
+
+	                <td data-ng-class="{points: driver.points > 0, 
+	                					third: driver.position == 3,
+	                					second: driver.position == 2,
+	                					first: driver.position == 1}" class="result" >
+	                	{{driver.points}}
+	                </td>
+	              </tr>	             
+	            </tbody>	          
+	          </table>
+        	</div>					
+	</div>

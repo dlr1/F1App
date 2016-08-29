@@ -1,0 +1,103 @@
+ <form [formGroup]="mopForm" >
+            <fieldset >
+                <div class="row">
+                    
+                    <span class="pull-right xopad-15right">
+                        <a class="btn xobtn-darkblue" [class.disabled]="!mopForm.valid">Save</a>
+                        <a class="btn xobtn-default" (click)="cancel()">Cancel</a>
+                    </span>
+                </div>
+                <br />
+                {{mopForm.value | json}}<br/>
+                form dirty:{{mopForm.dirty}}<br/>
+                form touched:{{mopForm.touched}}<br/>
+                form valid:{{mopForm.valid}}<br/>
+                form pristine:{{mopForm.pristine}}<br/>
+                <div class="panel panel-default">
+                    <table class="table table-condensed table-bordered round-boarder">
+                        <tbody>
+                        <tr>
+                            <td style="width:30%"><span class="title text-muted">MOP Id</span></td>
+                            <td style="width:70%"><span class="text-muted xoform-control xopad-5left">{{ mop.Id}}</span></td>
+                        </tr>
+                        <tr>
+                            <td style="width:30%"><span class="title">Type</span></td>
+                            <td style="width:70%">                                
+                                <select formControlName="MopTypeId" class="xoform-control xoselect-width200">                                    
+                                    <option value='-1'>select mop type</option>
+                                    <option *ngFor="let t of metadata?.Types" [value]="t.Id">{{t.Type}}</option>                                    
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:30%"><span class="title">Title</span></td>
+                            <td style="width:70%"><input type="text"  class="xoform-control xopad-5left" 
+                                maxlength="80" formControlName="Title" placeholder="Enter MOP Title..." required /></td>
+                        </tr>
+                        <tr>
+                            <td style="width:30%"><span class="title">Description</span></td>
+                            <td style="width:70%">
+                                <input type="text" class="xoform-control xopad-5left" maxlength="400"  formControlName="Description" 
+                                    placeholder="Enter MOP Description..." required />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:30%"><span class="title">Equipment</span></td>
+                            <td style="width:70%">                                
+                                <select formControlName="EquipmentId" class="xoform-control xoselect-width200">                                    
+                                    <option value=''>select Equipment</option>
+                                    <option *ngFor="let t of metadata?.Equipment" [value]="t.Id">{{t.Equipment}}</option>                                    
+                                </select>
+                            </td>
+                        </tr>
+                          <tr>
+                            <td style="width:30%"><span class="title">Category</span></td>
+                            <td style="width:70%">
+                                <select formControlName="CategoryId"  class="xoform-control xoselect-autowidth">
+                                    <option value="">Select Category</option>
+                                    <option *ngFor="let t of metadata?.Categories" [value]="t.Id">{{t.Category}}</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:30%"><span class="title">Impact</span></td>
+                            <td style="width:70%">
+                                <select formControlName="ImpactId" class="xoform-control xoselect-autowidth">                                                                            
+                                    <option value="">Select Impact</option>
+                                    <option *ngFor="let t of validImpactTypesForMop" [value]="t.Id">{{t.Impact}}</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:30%"><span class="title">Service Impacting</span></td>
+                            <td style="width:70%"><span class="title">{{mop.ImpactYesNo}}</span></td>
+                        </tr>
+                        <tr>
+                            <td style="width:30%"><span class="title">Dispatch Required</span></td>
+                            <td style="width:70%">
+                                <span *ngFor="let b of boolFlags">
+                                    <input name="Dispatch"
+                                           type="radio"
+                                           [value]="b.value"
+                                           formControlName="Dispatch" />
+                                    {{b}}
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:30%"><span class="title">Intended for Certification</span></td>
+                            <td style="width:70%">
+                                <span *ngFor="let b of boolFlags">
+                                    <input formControlName="IntendedForCertification"
+                                           type="radio"
+                                           [value]="b"                                           
+                                           maxlength="3" />
+                                    {{b}}
+                                </span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </fieldset>
+        </form>

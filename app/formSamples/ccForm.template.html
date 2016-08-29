@@ -1,0 +1,11 @@
+<div>
+  {{ccForm.value | json}}
+   <form (ngSubmit)="onSubmit()"  [formGroup]="ccForm">
+    <div *ngFor="let variable of variables" class="form-row">
+      <df-variable [data]="variable" [form]="ccForm"></df-variable>
+    </div>
+    <div class="form-row">
+      <button type="submit" [disabled]="!ccForm.valid">Save</button>
+    </div>
+  </form>
+</div>
