@@ -11,7 +11,7 @@ import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
                         [id]="data.variable" [placeholder]="data.placeholder">
                         <div *ngSwitchCase="'form-checkbox'" >
                             <label *ngFor="let o of data.options">
-                                <input  [formControlName]="data.variable" type="checkbox"                                
+                                <input #f [formControlName]="data.variable" type="checkbox" (click)="toggleSelection($event, data, f)"                               
                                         [name]="data.variable">{{o.label}}
                             </label>                        
                         </div>
@@ -23,5 +23,13 @@ import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 export class DynamicFormVariableComponent {
     @Input() data: any;
     @Input() form: FormGroup;
+
+    toggleSelection(evt, data,f){
+        if (evt.target.checked)
+            data.variable = data.checked;
+        else
+            data.variable = data.unchecked;
+    }
+
 }
 

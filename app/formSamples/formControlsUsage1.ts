@@ -85,7 +85,7 @@ export class FormControlsUsageComponent1 {
                                     isActive:'',
                                     toggle:'',
                                     topics:[],
-                                    browsers:[]
+                                    browsers:[['IE']]
                                 });                                
     }
     

@@ -11,7 +11,7 @@ import {PageNotFoundComponent} from './pagenotfound';
 // ];
 
 const appRoutes: Routes = [  
-  {path: '',redirectTo: 'forms',pathMatch: 'full'},  
+  {path: '',redirectTo: 'misc',pathMatch: 'full'},  
   {path:'races', loadChildren:'app/race/race.module'},
   {path:'teams', loadChildren:'app/team/team.module'},
   {path: '**', component: PageNotFoundComponent }  
