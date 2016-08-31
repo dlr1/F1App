@@ -20,13 +20,14 @@ export class MyComponentActions{}
     <div>
       <div style='font-weight:bold;background-color:green;color:white'>
         <ng-content select='my-comp-header'></ng-content>
-      </div>
+      </div>        
+      <div style="height:100px">
+        <ng-content select="my-comp-content"></ng-content>
+      </div>   
       <div>
-        <ng-content></ng-content>
-      </div>      
-      <div class="align-right">
         <ng-content select='my-comp-actions'></ng-content>
       </div>
+       
   </div>`
 })
 export class MyComponent{
