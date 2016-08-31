@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer, Directive } from '@angular/core';
+import { Component, ElementRef, Renderer, Directive, ContentChild, ViewChild } from '@angular/core';
 
 import {FormControl} from '@angular/forms';
 
@@ -31,7 +31,18 @@ export class MyComponentActions{}
   </div>`
 })
 export class MyComponent{
+    @ContentChild("inputchild") input;
+    @ContentChild(MyComponentHeader) header;
+  
+  ngAfterContentInit(){
+    console.log("content child:" + this.input);
+    console.log("content child MyComponentHeader:" + this.header);
+  }
 
+  ngAfterContentChecked() {
+    //console.log(this.input);
+    //console.log(this.actions);
+  }
 }
 
 @Component({
@@ -44,8 +55,22 @@ export class MyComponent{
  
 })
 export class MiscHostComponent {
+  
+  @ViewChild("input") input1;
+  @ViewChild(MyComponentHeader) header;
+ 
 
-    
+  ngAfterContentChecked() {
+    //console.log(this.input);
+    //console.log(this.actions);
+  }
+
+  ngAfterViewInit(){    
+    console.log("view init:" + this.input1);
+    console.log(this.header);
+  }
+
+  
 }
 
  
