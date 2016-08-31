@@ -56,6 +56,7 @@ export class MyComponent{
 })
 export class MiscHostComponent {
   
+  //ViewChild could be Component or a control
   @ViewChild("input") input1;
   @ViewChild(MyComponentHeader) header;
  
