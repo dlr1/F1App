@@ -8,9 +8,8 @@ import {DriverComponent} from './driver';
 import {driverRoutes} from './driver.routing';
 import {SharedModule} from '../shared/shared.module';
 
-
 @NgModule({
   imports:      [SharedModule, driverRoutes],
-  declarations: [DriversComponent, DriverComponent]    
+  declarations: [DriversComponent, DriverComponent]  
 })
 export class DriverModule { }

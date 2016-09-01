@@ -20,7 +20,7 @@ export class HelloComponent {
       <button (click)="addItem(val.value)">add hello</button>      
       <div #placeholder></div>
     </div>`,
-  directives: [HelloComponent]
+    entryComponents:[HelloComponent]  
 })
 export class DynamicComponent {
    @ViewChild('placeholder', {read: ViewContainerRef}) viewContainerRef;

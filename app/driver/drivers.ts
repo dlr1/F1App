@@ -7,8 +7,7 @@ import {MyFilterPipe} from '../shared/myFilterPipe';
 @Component({
   selector: 'drivers',
   moduleId: module.id,
-  templateUrl: 'drivers.template.html',
-  pipes:[MyFilterPipe]    
+  templateUrl: 'drivers.template.html'
 })
 export class DriversComponent { 
   filterName = null;

@@ -8,7 +8,7 @@ export const miscSampleRoutes = RouterModule.forChild([
         path: 'misc',
         component: DefaultMiscComponent,
         children: [
-          { path: '',  redirectTo:'dynComphost' },                   
+          { path: '',  redirectTo:'dynComp' },                   
           { path: 'host',  component: MiscHostComponent },
           { path: 'dynComp',  component: DynamicComponent }
         ]

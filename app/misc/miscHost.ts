@@ -10,6 +10,11 @@ import {RouterLink} from '@angular/router';
 export class MyComponentHeader{}
 
 @Directive({
+  selector:'my-comp-content'
+})
+export class MyComponentContent{}
+
+@Directive({
   selector:'my-comp-actions' 
 })
 export class MyComponentActions{}

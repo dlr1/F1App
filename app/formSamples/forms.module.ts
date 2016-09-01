@@ -17,7 +17,7 @@ import {MopMetadataResolve} from './mopMetadataResolve';
   imports:      [SharedModule, formSampleRoutes],
   entryComponents:[DynamicFormVariableComponent],
   declarations: [DefaultFormComponent, ReactiveFormComponent, DynamicFormVariableComponent, 
-                      TemplateFormComponent, FormControlsUsageComponent, FormControlsUsageComponent1, CCFormComponent],
+                        TemplateFormComponent, FormControlsUsageComponent, FormControlsUsageComponent1, CCFormComponent],
   providers:[MopMetadataResolve]
       
 })

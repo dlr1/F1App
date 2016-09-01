@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
-import {CheckboxListComponent} from '../shared/checkboxList';
+
 
 interface User1 {
     name: string; // text
@@ -26,8 +26,7 @@ interface Theme1 {
     {
         moduleId:module.id,
         selector:'fc1',
-        templateUrl:'FormControlsUsage1.template.html' ,
-        directives:[CheckboxListComponent]
+        templateUrl:'FormControlsUsage1.template.html'         
     }
 )
 export class FormControlsUsageComponent1 {
