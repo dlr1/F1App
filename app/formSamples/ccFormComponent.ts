@@ -53,6 +53,41 @@ export class CCFormComponent {
     return new FormGroup(group);
   }
 
+    setVariables(){
+      // let cmd = this.commandData.commands[0];
+      //  var tokens = [];
+         
+      // cmd.snippets.forEach(x=>
+      //   {
+      //       x.text.split(' ').forEach(y=>{
+      //                 var start = y.indexOf("<<");
+      //                 var end = y.indexOf(">>");
+                                          
+      //                 if ((start == 0) ) {
+      //                     if (end != -1)
+      //                     {
+      //                         var exact = y.substr(start, end + 2);
+      //                         tokens.push(exact);
+      //                     }
+      //                     else
+      //                     {
+      //                         var message = "Invalid Token Syntax. Valid Syntax is <<token>>." + "\r\n" + line;
+      //                         validTokens = false;
+                              
+      //                     }
+      //                 };
+      //       }
+      //   }
+      // )
+      // console.log(tokens);
+      // tokens.forEach((token)=>{
+      //    var ctrl = this.ccForm.controls[token.replace("<<","").replace(">>","")];
+      //     cmd.snippets[0].text = cmd.snippets[0].text.replace(token,ctrl.value);
+      // })
+      // cmd.snippets.forEach(x=>console.log(x.text));
+       
+    }
+
     ngOnInit(){
        this.http.get('app/formSamples/commands.json')
           .subscribe(x=>

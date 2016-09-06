@@ -3,14 +3,17 @@ import {RouterModule } from '@angular/router';
 import {DefaultMiscComponent} from './misc';
 import {MiscHostComponent} from './miscHost';
 import {DynamicComponent} from './dynamicComponent';
+import {ObsComponent} from './obsComponent';
+
 export const miscSampleRoutes = RouterModule.forChild([ 
      {
         path: 'misc',
         component: DefaultMiscComponent,
         children: [
-          { path: '',  redirectTo:'dynComp' },                   
+          { path: '',  redirectTo:'obs' },                   
           { path: 'host',  component: MiscHostComponent },
-          { path: 'dynComp',  component: DynamicComponent }
+          { path: 'dynComp',  component: DynamicComponent },
+          { path: 'obs',  component: ObsComponent }
         ]
       }
   ]);

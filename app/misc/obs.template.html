@@ -1,0 +1,17 @@
+
+<div *ngFor="let data of mydata">
+    <span style="padding-left:20px" *ngFor="let n of data | async">{{n}}</span>
+</div>
+
+<span style="padding-left:20px" *ngFor="let n of mydata1">{{n}}</span>
+
+<br/>
+obs1 : <span style="padding-left:20px" *ngFor="let n of mydata2">{{n}}</span>
+
+<br/>
+obs2 : <span style="padding-left:20px" *ngFor="let n of mydata3">{{n}}</span>
+
+<br/>
+<span>obs1 and obs2 status: {{isComplete}}</span>
+<br/>
+concat : <span style="padding-left:20px" *ngFor="let n of concatData">{{n}}</span>
