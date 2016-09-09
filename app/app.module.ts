@@ -17,6 +17,8 @@ import {AppComponent}  from './app';
 import {PageNotFoundComponent}  from './pagenotfound';
 import {DataService} from './shared/dataService';
 
+import {AuxComponent} from './auxComponent';
+           
 @Injectable()
 export class ConfigService {
 
@@ -32,7 +34,7 @@ export class ConfigService {
 
 @NgModule({
   imports:      [ BrowserModule, routing,  DriverModule, FormSamplesModule, MiscSamplesModule, SharedModule.forRoot()],
-  declarations: [ AppComponent,  PageNotFoundComponent ],
+  declarations: [ AppComponent,  PageNotFoundComponent, AuxComponent ],
   providers:[ConfigService, DataService,
     { provide: APP_INITIALIZER,
               useFactory: (config: ConfigService) => () => config.load(),

@@ -9,11 +9,14 @@ import {MiscHostComponent, MyComponent, MyComponentHeader, MyComponentActions, M
 import {DynamicComponent, HelloComponent} from './dynamicComponent';
 import {ObsComponent} from './obsComponent';
 
+import {MiscAuxComponent} from './miscAuxComponent';
+
 @NgModule({
   imports:      [SharedModule, miscSampleRoutes],
   entryComponents:[],
-  declarations: [DefaultMiscComponent, HelloComponent, MiscHostComponent, MyComponent, 
-                      MyComponentHeader, MyComponentActions, MyComponentContent, DynamicComponent, ObsComponent]      
+  declarations: [DefaultMiscComponent, HelloComponent, MiscHostComponent, MyComponent, MiscAuxComponent,
+                      MyComponentHeader, MyComponentActions, MyComponentContent, DynamicComponent, ObsComponent]   ,
+  exports:[MiscAuxComponent]   
 })
 
 export class MiscSamplesModule { }
