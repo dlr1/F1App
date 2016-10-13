@@ -1,4 +1,4 @@
-import {NgModule, APP_INITIALIZER, Injectable}      from '@angular/core';
+import {NgModule, APP_INITIALIZER, Injectable, OpaqueToken}      from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {routing} from './app.routing';
@@ -18,7 +18,7 @@ import {PageNotFoundComponent}  from './pagenotfound';
 import {DataService} from './shared/dataService';
 
 import {AuxComponent} from './auxComponent';
-           
+
 @Injectable()
 export class ConfigService {
 
@@ -39,7 +39,7 @@ export class ConfigService {
     { provide: APP_INITIALIZER,
               useFactory: (config: ConfigService) => () => config.load(),
               deps: [ConfigService, DataService], 
-              multi: true }
+              multi: true }    
   ],
   bootstrap:    [ AppComponent ]
 })

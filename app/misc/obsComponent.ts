@@ -1,10 +1,12 @@
-import { Component} from '@angular/core';
+import { Component, Inject} from '@angular/core';
 import 'rxjs/Rx';
 import {Observable} from 'rxjs/Observable';
+import {APP_CONFIG} from '../shared/shared.module';
 
 @Component({
     moduleId:module.id,
-    templateUrl:'obs.template.html'
+    templateUrl:'obs.template.html',
+    providers:[{provide:APP_CONFIG, useValue:window['appConfig']}]
 })
 export class ObsComponent{
 
@@ -16,9 +18,10 @@ export class ObsComponent{
     concatData = [];
     isComplete = 'not complete';
     concatStatus = 'concat not done'
-    constructor(){
+    constructor(@Inject(APP_CONFIG) private appConfig:any){
         this.mydata.push(Observable.of([1,2,3,4,5]));        
-        Observable.range(1,10).subscribe(x=>this.mydata1.push(x));        
+        Observable.range(1,10).subscribe(x=>this.mydata1.push(x));      
+        alert(appConfig.welcome_msg)  
     }
 
     ngOnInit(){

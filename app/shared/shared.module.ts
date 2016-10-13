@@ -1,4 +1,4 @@
-import { NgModule, ModuleWithProviders }      from '@angular/core';
+import { NgModule, ModuleWithProviders, OpaqueToken } from '@angular/core';
 import { FormsModule }        from '@angular/forms';
 import { CommonModule }        from '@angular/common';
 import {HttpModule, JsonpModule} from '@angular/http';
@@ -7,6 +7,8 @@ import {MyFilterPipe} from './myFilterPipe';
 import {ErgastAPIservice} from './ergastAPIservice';
 import {DataService} from './dataService';
 import {CheckboxListComponent} from './checkboxList';
+
+export let APP_CONFIG = new OpaqueToken('appConfig');
 
 import {CustomHttp, DefaultRequestOptions} from './customHttp';
 
